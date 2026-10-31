@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Puxarbaeva Aysanem — vizitka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;700&display=swap">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#EEF7F4; --card:rgba(255,255,255,.72); --ink:#0B2B2E; --muted:#4C6B6B;
+  --teal:#12857A; --mint:#CDEFE3; --pulse:#E8456B; --line:rgba(11,43,46,.12);
+  --blob1:#9fe0cc; --blob2:#bfe3f5;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#071C1F; --card:rgba(16,44,47,.7); --ink:#E6F6F1; --muted:#9FC1BC;
+    --teal:#3FD0BC; --mint:#12423F; --pulse:#FF6B8B; --line:rgba(230,246,241,.14);
+    --blob1:#0f5a52; --blob2:#16405f; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#071C1F; --card:rgba(16,44,47,.7); --ink:#E6F6F1; --muted:#9FC1BC;
+  --teal:#3FD0BC; --mint:#12423F; --pulse:#FF6B8B; --line:rgba(230,246,241,.14);
+  --blob1:#0f5a52; --blob2:#16405f; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{margin:0;min-height:100%}
+body{background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.55;
+  display:grid;place-items:center;min-height:100vh;padding:24px 16px;overflow-x:hidden;position:relative}
+.blob{position:fixed;border-radius:50%;filter:blur(70px);opacity:.75;z-index:0;animation:float 14s ease-in-out infinite alternate}
+.b1{width:340px;height:340px;background:var(--blob1);top:-80px;left:-80px}
+.b2{width:300px;height:300px;background:var(--blob2);bottom:-60px;right:-60px;animation-delay:-6s}
+@keyframes float{to{transform:translate(40px,60px) scale(1.15)}}
+
+.card{position:relative;z-index:1;width:100%;max-width:440px;background:var(--card);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);
+  border-radius:32px;padding:36px 28px 28px;box-shadow:0 30px 60px -30px rgba(11,43,46,.35);
+  animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(28px) scale(.97)}}
+
+.avatar{width:104px;height:104px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(145deg,var(--teal),#0b5d68);color:#fff;
+  font:600 38px Fraunces,Georgia,serif;position:relative;box-shadow:0 12px 30px -10px var(--teal)}
+.avatar::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:2px solid var(--teal);
+  opacity:0;animation:ring 2.6s ease-out infinite}
+@keyframes ring{0%{transform:scale(.9);opacity:.7}100%{transform:scale(1.25);opacity:0}}
+
+.head{text-align:center}
+h1{font:600 30px/1.15 Fraunces,Georgia,serif;margin:0 0 6px;letter-spacing:-.01em}
+.role{display:inline-flex;align-items:center;gap:8px;margin:0;padding:6px 14px;border-radius:99px;
+  background:var(--mint);color:var(--teal);font-weight:700;font-size:14px}
+.role i{width:8px;height:8px;border-radius:50%;background:var(--pulse);animation:beat 1.3s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.7)}30%{transform:scale(1)}45%{transform:scale(1.4)}}
+
+.ecg{display:block;width:100%;height:56px;margin:22px 0 8px}
+.ecg path{fill:none;stroke:var(--pulse);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:420;stroke-dashoffset:420;animation:draw 3.2s linear .6s infinite}
+.ecg .base{stroke:var(--line);stroke-dasharray:none;animation:none;stroke-width:1.5}
+@keyframes draw{0%{stroke-dashoffset:420}60%,85%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+
+.about{text-align:center;color:var(--muted);font-size:15px;margin:0 auto 22px;max-width:34ch}
+
+h2{font:600 17px Fraunces,Georgia,serif;margin:0 0 10px}
+.skills{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0 0 26px;list-style:none}
+.skills li{padding:7px 14px;border:1px solid var(--line);border-radius:99px;font-size:13.5px;font-weight:500;
+  background:var(--card);transition:transform .25s,background .25s,color .25s}
+.skills li:hover{transform:translateY(-3px);background:var(--teal);color:#fff;border-color:var(--teal)}
+
+.links{display:grid;gap:10px}
+.link{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:20px;text-decoration:none;
+  color:var(--ink);background:var(--card);border:1px solid var(--line);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s}
+.link:hover,.link:focus-visible{transform:translateX(6px);border-color:var(--c);box-shadow:0 10px 24px -14px var(--c);outline:none}
+.link:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.ico{flex:none;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;color:#fff;background:var(--c)}
+.ico svg{width:24px;height:24px;fill:currentColor}
+.link b{display:block;font-size:15px}
+.link span{display:block;font-size:13px;color:var(--muted);word-break:break-all}
+.tg{--c:#229ED9}.ig{--c:#D6249F}.ml{--c:#12857A}
+.ig .ico{background:linear-gradient(45deg,#F9A03F,#E1306C,#7B3FE4)}
+.arrow{margin-left:auto;opacity:.4;transition:.3s}
+.link:hover .arrow{opacity:1;transform:translateX(3px)}
+
+.copy{margin:18px auto 0;display:block;background:none;border:0;color:var(--teal);font:700 13px Manrope,sans-serif;
+  cursor:pointer;padding:6px 10px;border-radius:8px}
+.copy:focus-visible{outline:2px solid var(--teal)}
+.theme{position:fixed;z-index:2;top:calc(env(safe-area-inset-top,0px) + 12px);right:14px;width:42px;height:42px;
+  border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;
+  backdrop-filter:blur(10px);font-size:18px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.ecg path{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+<button class="theme" id="theme" aria-label="Mavzuni almashtirish">◐</button>
+
+<main class="card">
+  <div class="head">
+    <div class="avatar" aria-hidden="true">AP</div>
+    <h1>Puxarbaeva Aysanem</h1>
+    <p class="role"><i></i>Shifokor</p>
+  </div>
+
+  <svg class="ecg" viewBox="0 0 400 56" preserveAspectRatio="none" aria-hidden="true">
+    <path class="base" d="M0 28H400"/>
+    <path d="M0 28H110L126 28L138 8L152 48L164 18L174 28H260L276 28L288 8L302 48L314 18L324 28H400"/>
+  </svg>
+
+  <p class="about">Sizning salomatligingiz — mening e’tiborim markazida. Aniq tashxis, sodda tushuntirish, ishonchli yordam.</p>
+
+  <h2>Ko‘nikmalar</h2>
+  <ul class="skills">
+    <li>Klinik tashxis</li>
+    <li>Davolash rejasi</li>
+    <li>Bemor bilan muloqot</li>
+    <li>Profilaktika</li>
+    <li>Birinchi yordam</li>
+    <li>Tibbiy maslahat</li>
+  </ul>
+
+  <h2>Bog‘lanish</h2>
+  <nav class="links">
+    <a class="link tg" href="https://t.me/пухарбаева" target="_blank" rel="noopener">
+      <span class="ico"><svg viewBox="0 0 24 24"><path d="M21.9 4.4 18.6 20c-.2 1-.9 1.3-1.7.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5L18 6.8c.4-.3-.1-.5-.6-.2L6.2 13.7l-4.8-1.5c-1-.3-1-1 .2-1.5L20.400 3.500c.9-.3 1.600.2 1.500.9z"/></svg></span>
+      <div><b>Telegram</b><span>@пухарбаева</span></div><span class="arrow">›</span>
+    </a>
+    <a class="link ig" href="https://instagram.com/puxarbaevvva" target="_blank" rel="noopener">
+      <span class="ico"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.500 5.500 0 0 1 22 7.500v9a5.500 5.500 0 0 1-5.500 5.500h-9A5.500 5.500 0 0 1 2 16.500v-9A5.500 5.500 0 0 1 7.500 2zm0 2A3.500 3.500 0 0 0 4 7.500v9A3.500 3.500 0 0 0 7.500 20h9a3.500 3.500 0 0 0 3.500-3.500v-9A3.500 3.500 0 0 0 16.500 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.500-3.200a1.200 1.200 0 1 1 0 2.400 1.200 1.200 0 0 1 0-2.400z"/></svg></span>
+      <div><b>Instagram</b><span>@puxarbaevvva</span></div><span class="arrow">›</span>
+    </a>
+    <a class="link ml" href="mailto:puxarbaeva6@gmail.com">
+      <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.5l8 5.500 8-5.500V6H4zm16 3-8 5.500L4 9v9h16V9z"/></svg></span>
+      <div><b>Pochta</b><span>puxarbaeva6@gmail.com</span></div><span class="arrow">›</span>
+    </a>
+  </nav>
+  <button class="copy" id="copy">Pochtani nusxalash</button>
+</main>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||
+      (!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    root.setAttribute('data-theme',dark?'light':'dark');
+  });
+  var c=document.getElementById('copy');
+  c.addEventListener('click',function(){
+    var t='puxarbaeva6@gmail.com';
+    function ok(){c.textContent='Nusxalandi';setTimeout(function(){c.textContent='Pochtani nusxalash'},1800)}
+    try{navigator.clipboard.writeText(t).then(ok,function(){})}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
